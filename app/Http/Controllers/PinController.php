@@ -5,14 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Pin
+use App\Pin;
 
 class PinController extends Controller
 {
-    public function getAllPublicPins()
-    {
-        return App\Pin::where('isPublic',true);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -20,7 +16,7 @@ class PinController extends Controller
      */
     public function index()
     {
-        //
+        return Pin::where('isPublic', "true")->get();
     }
 
     /**
@@ -48,32 +44,9 @@ class PinController extends Controller
             'creation_method_id' => 'required'
         ]);
 
-        App\Pin::create($request);        
-
-        return 200;
+        return Pin::create($request->all());
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
