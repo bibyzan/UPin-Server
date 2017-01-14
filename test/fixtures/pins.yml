@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_public: false
+  longitude: 1.5
+  latitude: 1.5
+  creation_method_id: 1
+
+two:
+  is_public: false
+  longitude: 1.5
+  latitude: 1.5
+  creation_method_id: 1

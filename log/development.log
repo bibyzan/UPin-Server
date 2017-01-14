@@ -1,0 +1,498 @@
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-14 02:21:52 UTC], ["updated_at", 2017-01-14 02:21:52 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('0')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-14 02:21:54 UTC], ["updated_at", 2017-01-14 02:21:54 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePins (20170114023814)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "pins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "is_public" boolean, "longitude" float, "latitude" float, "creation_method_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170114023814"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20170114023925)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170114023925"]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateThoughts (20170114024019)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "thoughts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "pin_id" integer, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_thoughts_on_user_id" ON "thoughts" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_thoughts_on_pin_id" ON "thoughts" ("pin_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170114024019"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+[0m
+Started GET "/user" for ::1 at 2017-01-13 21:47:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2017-01-13 21:47:50 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for ::1 at 2017-01-13 21:48:04 -0500
+Processing by UsersController#create as */*
+  Parameters: {"longitude"=>"38.3919", "latitude"=>"36.3939", "creation_method_id"=>"1", "isPublic"=>"true"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2017-01-13 22:04:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as */*
+  Parameters: {"longitude"=>"38.3919", "latitude"=>"36.3939", "creation_method_id"=>"1", "isPublic"=>"true"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddSocialLoginToPin (20170114032839)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "pins" ADD "social_login" integer[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "is_public" boolean, "longitude" float, "latitude" float, "creation_method_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "social_login" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "apins" ("id","is_public","longitude","latitude","creation_method_id","created_at","updated_at","social_login")
+                     SELECT "id","is_public","longitude","latitude","creation_method_id","created_at","updated_at","social_login" FROM "pins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "pins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "pins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "is_public" boolean, "longitude" float, "latitude" float, "creation_method_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "social_login" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("id","is_public","longitude","latitude","creation_method_id","created_at","updated_at","social_login")
+                     SELECT "id","is_public","longitude","latitude","creation_method_id","created_at","updated_at","social_login" FROM "apins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "apins"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170114032839"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+[0m
+Started POST "/users" for ::1 at 2017-01-13 22:41:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/user" for ::1 at 2017-01-13 22:46:05 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/user"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+Started POST "/users" for ::1 at 2017-01-13 22:46:10 -0500
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2017-01-13 22:48:33 -0500
+Processing by UsersController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2017-01-13 22:49:11 -0500
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"user\": {\n\t\t\"is_public\": true,\n\t\t\"longitude\": 40.4173,\n\t\t\"latitude\": 82.9071,\n\t\t\"social_login\": 1\n\t}\n}"=>nil}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2017-01-13 22:49:21 -0500
+Processing by UsersController#create as */*
+  Parameters: {"\n\t\"user\": {\n\t\t\"is_public\": true,\n\t\t\"longitude\": 40.4173,\n\t\t\"latitude\": 82.9071,\n\t\t\"social_login\": 1\n\t}\n"=>nil}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2017-01-13 22:49:28 -0500
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"user\": {\n\t\t\"is_public\": true,\n\t\t\"longitude\": 40.4173,\n\t\t\"latitude\": 82.9071,\n\t\t\"social_login\": 1\n\t}\n}"=>nil}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2017-01-13 22:50:27 -0500
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"user\": {\n\t\t\"is_public\": true,\n\t\t\"longitude\": 40.4173,\n\t\t\"latitude\": 82.9071,\n\t\t\"social_login\": 1\n\t}\n}"=>nil}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2017-01-13 22:53:11 -0500
+Processing by UsersController#create as */*
+  Parameters: {"{\n\t\"user\": {\n\t\t\"is_public\": true, \"longitude\": 40.4173, \"latitude\": 82.9071, \"social_login\": 1\n\t}\n}"=>nil}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:49:in `user_params'
+app/controllers/users_controller.rb:18:in `create'
+Started POST "/users" for ::1 at 2017-01-13 23:01:55 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#create as HTML
+  Parameters: {"user"=>{"is_public"=>true, "longitude"=>40.4173, "latitude"=>82.9071, "social_login"=>1}}
+Unpermitted parameters: is_public, longitude, latitude, social_login
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", 2017-01-14 04:01:56 UTC], ["updated_at", 2017-01-14 04:01:56 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 10ms (Views: 0.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/pins" for ::1 at 2017-01-13 23:04:50 -0500
+Processing by PinsController#create as HTML
+  Parameters: {"pin"=>{"is_public"=>true, "longitude"=>40.4173, "latitude"=>82.9071, "social_login"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("is_public", "longitude", "latitude", "created_at", "updated_at", "social_login") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_public", true], ["longitude", 40.4173], ["latitude", 82.9071], ["created_at", 2017-01-14 04:04:50 UTC], ["updated_at", 2017-01-14 04:04:50 UTC], ["social_login", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 12ms (Views: 0.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/pins" for ::1 at 2017-01-13 23:05:02 -0500
+Processing by PinsController#index as */*
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "pins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "is_public" boolean, "longitude" float, "latitude" float, "creation_method_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "social_login" integer)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "thoughts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "pin_id" integer, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_thoughts_on_pin_id" ON "thoughts" ("pin_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX "index_thoughts_on_user_id" ON "thoughts" ("user_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170114032839')[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170114023814'),
+('20170114023925'),
+('20170114024019');
+
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-14 04:07:21 UTC], ["updated_at", 2017-01-14 04:07:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "pins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "is_public" boolean, "longitude" float, "latitude" float, "creation_method_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "social_login" integer)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "thoughts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "pin_id" integer, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_thoughts_on_pin_id" ON "thoughts" ("pin_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX "index_thoughts_on_user_id" ON "thoughts" ("user_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES ('20170114032839')[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO schema_migrations (version) VALUES
+('20170114023814'),
+('20170114023925'),
+('20170114024019');
+
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-14 04:07:21 UTC], ["updated_at", 2017-01-14 04:07:21 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+[0m
+Started GET "/pins" for ::1 at 2017-01-13 23:07:30 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#index as */*
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/pins" for ::1 at 2017-01-13 23:10:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#create as HTML
+  Parameters: {"pin"=>{"is_public"=>true, "longitude"=>40.4173, "latitude"=>82.9071, "social_login"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pins" ("is_public", "longitude", "latitude", "created_at", "updated_at", "social_login") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_public", true], ["longitude", 40.4173], ["latitude", 82.9071], ["created_at", 2017-01-14 04:10:36 UTC], ["updated_at", 2017-01-14 04:10:36 UTC], ["social_login", 1]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 8ms (Views: 0.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/pins" for ::1 at 2017-01-13 23:10:41 -0500
+Processing by PinsController#index as */*
+  [1m[36mPin Load (0.2ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", :environment]]
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePins (20170114023814)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "pins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "is_public" boolean, "longitude" float, "latitude" float, "creation_method_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170114023814"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20170114023925)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170114023925"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateThoughts (20170114024019)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "thoughts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "pin_id" integer, "text" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_thoughts_on_user_id" ON "thoughts" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_thoughts_on_pin_id" ON "thoughts" ("pin_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170114024019"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddSocialLoginToPin (20170114032839)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pins" ADD "social_login" integer[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "apins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "is_public" boolean, "longitude" float, "latitude" float, "creation_method_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "social_login" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "apins" ("id","is_public","longitude","latitude","creation_method_id","created_at","updated_at","social_login")
+                     SELECT "id","is_public","longitude","latitude","creation_method_id","created_at","updated_at","social_login" FROM "pins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "pins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "pins" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "is_public" boolean, "longitude" float, "latitude" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "social_login" integer)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "pins" ("id","is_public","longitude","latitude","created_at","updated_at","social_login")
+                     SELECT "id","is_public","longitude","latitude","created_at","updated_at","social_login" FROM "apins"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "apins"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170114032839"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-14 04:12:43 UTC], ["updated_at", 2017-01-14 04:12:43 UTC]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_pin_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_thoughts_on_user_id' AND type='index'
+[0m
+Started POST "/pins" for ::1 at 2017-01-13 23:12:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PinsController#create as HTML
+  Parameters: {"pin"=>{"is_public"=>true, "longitude"=>40.4173, "latitude"=>82.9071, "social_login"=>1}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pins" ("is_public", "longitude", "latitude", "created_at", "updated_at", "social_login") VALUES (?, ?, ?, ?, ?, ?)[0m  [["is_public", true], ["longitude", 40.4173], ["latitude", 82.9071], ["created_at", 2017-01-14 04:12:49 UTC], ["updated_at", 2017-01-14 04:12:49 UTC], ["social_login", 1]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 201 Created in 8ms (Views: 0.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/pins" for ::1 at 2017-01-13 23:12:53 -0500
+Processing by PinsController#index as */*
+  [1m[36mPin Load (0.1ms)[0m  [1m[34mSELECT "pins".* FROM "pins"[0m
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
